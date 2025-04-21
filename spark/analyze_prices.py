@@ -3,12 +3,22 @@ from pyspark.sql.functions import col, avg
 from datetime import date
 import psycopg2
 
+from pyspark import SparkContext
 
-spark = SparkSession.builder.appName("CryptoAnomalies").getOrCreate()
+sc = SparkContext.getOrCreate()
+sc.setCheckpointDir("/tmp/checkpoints")  # Fresh checkpoint dir
+sc.setLogLevel("DEBUG")  # For detailed serialization logs
+
+spark = (
+    SparkSession.builder.appName("CryptoAnomalies")
+    .master("spark://spark:7077")
+    .getOrCreate()
+)
 
 df = (
     spark.read.format("jdbc")
     .option("url", "jdbc:postgresql://postgres:5432/crypto_db")
+    .option("driver", "org.postgresql.Driver")
     .option("dbtable", "crypto_prices")
     .option("user", "airflow")
     .option("password", "airflow")

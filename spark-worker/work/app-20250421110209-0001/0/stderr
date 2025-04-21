@@ -1,0 +1,179 @@
+Spark Executor Command: "/opt/bitnami/java/bin/java" "-cp" "/opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/*" "-Xmx2048M" "-Dspark.driver.blockManager.port=7080" "-Dspark.port.maxRetries=50" "-Dspark.driver.port=7078" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@airflow-scheduler:7078" "--executor-id" "0" "--hostname" "172.31.0.4" "--cores" "2" "--app-id" "app-20250421110209-0001" "--worker-url" "spark://Worker@172.31.0.4:33683" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/04/21 11:02:12 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 175@1bc2de7861bf
+25/04/21 11:02:12 INFO SignalUtils: Registering signal handler for TERM
+25/04/21 11:02:12 INFO SignalUtils: Registering signal handler for HUP
+25/04/21 11:02:12 INFO SignalUtils: Registering signal handler for INT
+25/04/21 11:02:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/04/21 11:02:14 INFO SecurityManager: Changing view acls to: spark,airflow
+25/04/21 11:02:14 INFO SecurityManager: Changing modify acls to: spark,airflow
+25/04/21 11:02:14 INFO SecurityManager: Changing view acls groups to: 
+25/04/21 11:02:14 INFO SecurityManager: Changing modify acls groups to: 
+25/04/21 11:02:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark, airflow; groups with view permissions: EMPTY; users with modify permissions: spark, airflow; groups with modify permissions: EMPTY
+25/04/21 11:02:15 INFO TransportClientFactory: Successfully created connection to airflow-scheduler/172.31.0.7:7078 after 158 ms (0 ms spent in bootstraps)
+25/04/21 11:02:15 INFO SecurityManager: Changing view acls to: spark,airflow
+25/04/21 11:02:15 INFO SecurityManager: Changing modify acls to: spark,airflow
+25/04/21 11:02:15 INFO SecurityManager: Changing view acls groups to: 
+25/04/21 11:02:15 INFO SecurityManager: Changing modify acls groups to: 
+25/04/21 11:02:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark, airflow; groups with view permissions: EMPTY; users with modify permissions: spark, airflow; groups with modify permissions: EMPTY
+25/04/21 11:02:15 INFO TransportClientFactory: Successfully created connection to airflow-scheduler/172.31.0.7:7078 after 9 ms (0 ms spent in bootstraps)
+25/04/21 11:02:16 INFO DiskBlockManager: Created local directory at /opt/bitnami/spark/temp/spark-863e3c31-2ddc-4691-a6dc-fe25ac8e09de/executor-efe7c135-91e2-450d-a573-51bbcfc4d631/blockmgr-30afe4e0-e885-42cd-a98c-f47609ada53e
+25/04/21 11:02:16 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+25/04/21 11:02:17 INFO WorkerWatcher: Connecting to worker spark://Worker@172.31.0.4:33683
+25/04/21 11:02:17 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@airflow-scheduler:7078
+25/04/21 11:02:17 INFO TransportClientFactory: Successfully created connection to /172.31.0.4:33683 after 11 ms (0 ms spent in bootstraps)
+25/04/21 11:02:17 INFO WorkerWatcher: Successfully connected to spark://Worker@172.31.0.4:33683
+25/04/21 11:02:17 INFO ResourceUtils: ==============================================================
+25/04/21 11:02:17 INFO ResourceUtils: No custom resources configured for spark.executor.
+25/04/21 11:02:17 INFO ResourceUtils: ==============================================================
+25/04/21 11:02:17 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+25/04/21 11:02:17 INFO Executor: Starting executor ID 0 on host 172.31.0.4
+25/04/21 11:02:17 INFO Executor: OS info Linux, 5.15.49-linuxkit, amd64
+25/04/21 11:02:17 INFO Executor: Java version 17.0.10
+25/04/21 11:02:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33921.
+25/04/21 11:02:17 INFO NettyBlockTransferService: Server created on 172.31.0.4:33921
+25/04/21 11:02:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/04/21 11:02:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.31.0.4, 33921, None)
+25/04/21 11:02:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.31.0.4, 33921, None)
+25/04/21 11:02:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.31.0.4, 33921, None)
+25/04/21 11:02:17 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/04/21 11:02:17 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@11717bd6 for default.
+25/04/21 11:02:17 INFO Executor: Fetching spark://airflow-scheduler:7078/jars/postgresql-jdbc.jar with timestamp 1745233327468
+25/04/21 11:02:17 INFO TransportClientFactory: Successfully created connection to airflow-scheduler/172.31.0.7:7078 after 13 ms (0 ms spent in bootstraps)
+25/04/21 11:02:17 INFO Utils: Fetching spark://airflow-scheduler:7078/jars/postgresql-jdbc.jar to /opt/bitnami/spark/temp/spark-863e3c31-2ddc-4691-a6dc-fe25ac8e09de/executor-efe7c135-91e2-450d-a573-51bbcfc4d631/spark-6ac1c59f-f150-4141-8af2-9d1b65bac77f/fetchFileTemp2983456172677419478.tmp
+25/04/21 11:02:17 INFO Utils: Copying /opt/bitnami/spark/temp/spark-863e3c31-2ddc-4691-a6dc-fe25ac8e09de/executor-efe7c135-91e2-450d-a573-51bbcfc4d631/spark-6ac1c59f-f150-4141-8af2-9d1b65bac77f/791127181745233327468_cache to /opt/bitnami/spark/work/app-20250421110209-0001/0/./postgresql-jdbc.jar
+25/04/21 11:02:17 INFO Executor: Adding file:/opt/bitnami/spark/work/app-20250421110209-0001/0/./postgresql-jdbc.jar to class loader default
+25/04/21 11:02:20 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+25/04/21 11:02:20 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+25/04/21 11:02:20 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+25/04/21 11:02:20 INFO TransportClientFactory: Successfully created connection to airflow-scheduler/172.31.0.7:7080 after 2 ms (0 ms spent in bootstraps)
+25/04/21 11:02:20 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 7.7 KiB, free 1048.8 MiB)
+25/04/21 11:02:20 INFO TorrentBroadcast: Reading broadcast variable 0 took 136 ms
+25/04/21 11:02:20 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 15.0 KiB, free 1048.8 MiB)
+25/04/21 11:02:20 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+java.io.InvalidClassException: org.apache.spark.rdd.RDD; local class incompatible: stream classdesc serialVersionUID = 823754013007382808, local class serialVersionUID = 3516924559342767982
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2606)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2457)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2257)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:129)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:90)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/04/21 11:02:20 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+25/04/21 11:02:20 INFO Executor: Running task 0.1 in stage 0.0 (TID 1)
+25/04/21 11:02:20 ERROR Executor: Exception in task 0.1 in stage 0.0 (TID 1)
+java.io.InvalidClassException: org.apache.spark.rdd.RDD; local class incompatible: stream classdesc serialVersionUID = 823754013007382808, local class serialVersionUID = 3516924559342767982
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2606)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2457)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2257)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:129)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:90)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/04/21 11:02:20 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+25/04/21 11:02:20 INFO Executor: Running task 0.2 in stage 0.0 (TID 2)
+25/04/21 11:02:20 ERROR Executor: Exception in task 0.2 in stage 0.0 (TID 2)
+java.io.InvalidClassException: org.apache.spark.rdd.RDD; local class incompatible: stream classdesc serialVersionUID = 823754013007382808, local class serialVersionUID = 3516924559342767982
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2606)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2457)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2257)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:129)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:90)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/04/21 11:02:20 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+25/04/21 11:02:20 INFO Executor: Running task 0.3 in stage 0.0 (TID 3)
+25/04/21 11:02:20 ERROR Executor: Exception in task 0.3 in stage 0.0 (TID 3)
+java.io.InvalidClassException: org.apache.spark.rdd.RDD; local class incompatible: stream classdesc serialVersionUID = 823754013007382808, local class serialVersionUID = 3516924559342767982
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2606)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2457)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2257)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:129)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:90)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/04/21 11:02:21 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+25/04/21 11:02:21 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

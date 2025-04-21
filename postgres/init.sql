@@ -1,5 +1,10 @@
-CREATE DATABASE airflow;
 \c airflow;
+
+
+CREATE DATABASE crypto_db;
+
+
+\c crypto_db;
 
 CREATE TABLE IF NOT EXISTS crypto_prices (
     symbol VARCHAR(10),
